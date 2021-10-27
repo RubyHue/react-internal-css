@@ -1,0 +1,33 @@
+{
+    "name": "react-internal-css",
+    "version": "1.0.0",
+    "description": "Include internal stylesheets in React component instead of extracting into separate files. Provides drop-in server rendering support.",
+    "keywords": [
+        "ssr",
+        "ssg",
+        "server rendering",
+        "dynamic loading",
+        "lazy loading",
+        "react",
+        "head",
+        "style",
+        "internal css",
+        "react-helmet",
+        "constructable stylesheets"
+    ],
+    "main": "index.js",
+    "repository": {
+        "url": "https://github.com/RubyHue/react-internal-css",
+        "type": "git"
+    },
+    "bugs": "https://github.com/RubyHue/react-internal-css/issues",
+    "homepage": "https://github.com/RubyHue/react-internal-css",
+    "contributors": [
+        "Ruide Hu <richardhustondev@gmail.com>"
+    ],
+    "author": "Ruide Hu <richardhustondev@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "react-helmet": "^6.1.0"
+    }
+}
