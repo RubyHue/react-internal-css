@@ -1,7 +1,7 @@
-const React = require("react");
-const { Helmet } = require("react-helmet");
-if (process.env.ENVIRONMENT === "browser") {
-    const { useLayoutEffect } = React;
+import React, { useLayoutEffect } from "react";
+import { Helmet } from "react-helmet";
+
+if (process.env.ENVIRONMENT === "browsers") {
     function adoptSheet(sheet) {
         document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
     }
@@ -13,7 +13,7 @@ if (process.env.ENVIRONMENT === "browser") {
         }
         document.adoptedStyleSheets = sheets;
     }
-    module.exports = function Style({ children }) {
+    var Style = function Style({ children }) {
         useLayoutEffect(() => {
             let sheet = children;
             if (!sheet) return;
@@ -31,7 +31,7 @@ if (process.env.ENVIRONMENT === "browser") {
     }
 } else {
     //node.js environment: doesn't have CSSStyleSheet
-    module.exports = function RenderStyle({ children: sheet }) {
+    var Style = function ServerSideStyle({ children: sheet }) {
         if (!sheet) {
             return <Helmet></Helmet>
         } else if (Array.isArray(sheet) || typeof sheet === 'string') {
@@ -46,3 +46,4 @@ if (process.env.ENVIRONMENT === "browser") {
         }
     }
 }
+export default Style
